@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "metadata": {
+    "student_name": "Nguyễn Thị Hải Yến",
+    "student_id": "2A202601388",
+    "group_id": "vinno",
+    "submitted_at": "2026-08-25T00:00:00Z"
+  },
+  "industry": "mobility-autonomous-driving",
+  "product_context": {
+    "product_name": "Baidu Apollo RT6",
+    "product_stage": "production",
+    "problem_statement": "Chi phí nhân công tài xế chiếm tỷ trọng lớn trong dịch vụ gọi xe truyền thống dẫn đến giá cước cao và nguy cơ tai nạn do lỗi chủ quan của con người.",
+    "target_users": [
+      "Hành khách gọi xe di chuyển trong đô thị",
+      "Khách du lịch muốn trải nghiệm phương tiện tự lái",
+      "Doanh nghiệp cung cấp dịch vụ gọi xe muốn tối ưu chi phí vận hành"
+    ],
+    "value_hypothesis": "Tăng tỷ lệ sẵn sàng sử dụng dịch vụ 24/7, giảm thiểu tai nạn do hành vi chủ quan của con người nhờ trang bị 38 cảm biến kết hợp bộ não AI, giảm giá cước taxi xuống 50% so với cước taxi có tài xế.",
+    "in_scope": [
+      "Hoạt động đón trả khách tự động trong khu vực địa lý xác định (ODD)",
+      "Vận hành tự động trong mạng lưới đường đô thị có bản đồ HD Maps ở tốc độ ≤ 60km/h",
+      "Tự động cập nhật lộ trình tránh điểm ùn tắc theo thời gian thực"
+    ],
+    "non_goals": [
+      "Không hoạt động ngoài phạm vi địa lý được cấp phép hoặc những cung đường chưa có dữ liệu HD Map chi tiết.",
+      "Không vận hành trong điều kiện thời tiết khắc nghiệt (mưa bão lớn ngập lụt, sương mù dày đặc, bão tuyết) ảnh hưởng nghiêm trọng đến cảm biến."
+    ],
+    "user_journey_moment": "Khoảnh khắc hành khách lên xe, xe tự động chốt cửa và AI bắt đầu thực hiện toàn bộ chu trình điều hướng, nhận diện vật cản và điều khiển chân ga/phanh/lái suốt chuyến đi mà không có tài xế ngồi ghế trước.",
+    "target_launch_or_review_date": "2026-08-20",
+    "automation_level": "fully-automated",
+    "fallback_experience": "Hệ thống chuyển tín hiệu khẩn cấp về trung tâm giám sát từ xa để can thiệp điều khiển; nếu mất kết nối mạng, xe tự kích hoạt chế độ dừng đỗ an toàn (MRM), bật đèn khẩn cấp và tấp vào lề.",
+    "decision_reversibility": "hard-to-reverse"
+  },
+  "system_profile": {
+    "purpose": "Cung cấp hệ thống lái tự động cấp độ 4 (SAE Level 4) tích hợp đa cảm biến và AI để nhận diện môi trường, lập kế hoạch di chuyển và điều khiển xe chở khách an toàn trong khu vực đô thị xác định.",
+    "user_groups": [
+      "Hành khách sử dụng dịch vụ gọi xe tự hành Apollo Go",
+      "Nhân viên giám sát và hỗ trợ an toàn từ xa (Remote Safety Operators)",
+      "Kỹ sư bảo trì phần cứng và đội ngũ quản lý vận hành đội xe (Fleet Managers)"
+    ],
+    "decision_impact": "Quyết định điều khiển phương tiện tác động trực tiếp đến an toàn tính mạng, sức khỏe của hành khách và người tham gia giao thông xung quanh, cũng như lưu thông trật tự đường bộ.",
+    "data_types": [
+      "Hình ảnh video độ phân giải cao thời gian thực từ hệ thống camera 360 độ",
+      "Dữ liệu đám mây điểm 3D từ cảm biến LiDAR và tín hiệu radar sóng milimet (mmWave)",
+      "Dữ liệu vị trí địa lý chính xác cao từ RTK-GPS và cảm biến quán tính IMU",
+      "Dữ liệu bản đồ số độ nét cao (HD Maps) và thông tin giao thông V2X",
+      "Dữ liệu tương tác và hình ảnh giám sát an toàn bên trong khoang hành khách"
+    ],
+    "deployment_context": "Nền tảng máy tính nhúng trên xe đạt chuẩn an toàn ô tô (Automotive Grade Edge Computing) kết hợp mạng 5G độ trễ thấp kết nối máy chủ đám mây giám sát.",
+    "target_markets": [
+      "China (Wuhan, Beijing, Shanghai, Shenzhen)",
+      "Global pilot markets for autonomous urban mobility"
+    ],
+    "system_boundary": {
+      "model": "Baidu Apollo ADFM (Autonomous Driving Foundation Model) kết hợp mạng nơ-ron đa tầng Sensor Fusion 3D Perception & Motion Planning",
+      "application": "Ứng dụng gọi xe Apollo Go App và hệ thống giao diện tương tác thông minh trên màn hình khoang xe",
+      "people": [
+        "Hành khách trong xe",
+        "Nhân viên an toàn giám sát từ xa",
+        "Đội kỹ thuật cứu hộ và bảo dưỡng phương tiện",
+        "Người đi bộ, người đi xe đạp và các phương tiện cùng lưu thông trên đường"
+      ],
+      "vendors": [
+        "Nhà cung cấp cảm biến LiDAR, Camera quang học và Radar mmWave",
+        "Nhà sản xuất vi xử lý tính toán an toàn trên ô tô",
+        "Nhà mạng viễn thông cung cấp hạ tầng kết nối 5G",
+        "Đơn vị cung cấp dữ liệu hạ tầng giao thông thông minh V2X"
+      ],
+      "upstream_inputs": [
+        "Luồng tín hiệu hình ảnh trực tiếp từ 38 cảm biến (LiDAR, Camera, Radar)",
+        "Tọa độ GPS/IMU độ chính xác mức centimet",
+        "Dữ liệu lớp bản đồ HD Map và thông tin đèn tín hiệu giao thông V2X",
+        "Yêu cầu đặt chuyến và điểm đón/trả từ hành khách qua ứng dụng"
+      ],
+      "downstream_decisions": [
+        "Lệnh điều khiển chân ga, phanh và góc lái qua hệ thống Drive-by-Wire",
+        "Lệnh bật đèn xi-nhan, đèn pha, còi cảnh báo và đèn khẩn cấp",
+        "Lệnh kích hoạt kịch bản dừng đỗ an toàn tối thiểu (MRM) khi phát hiện sự cố",
+        "Thông báo trạng thái hành trình và cảnh báo lên màn hình người dùng và trung tâm điều hành"
+      ]
+    }
+  },
+  "industry_risk_snapshot": {
+    "harm_severity": 5,
+    "high_stakes": 5,
+    "sensitive_data": 3,
+    "affected_scale": 4,
+    "human_review_need": 5,
+    "rationale": "Xe tự hành vận hành trong môi trường vật lý đô thị phức tạp, nơi sự cố hệ thống có thể trực tiếp gây tai nạn nghiêm trọng hoặc nguy hiểm đến tính mạng. Quyết định đánh lái, tăng tốc hay phanh khẩn cấp phải diễn ra trong mili-giây với mức độ rủi ro cực cao. Hệ thống cảm biến camera 360 độ và telemetry thu thập dữ liệu không gian công cộng và PII, ảnh hưởng trực tiếp đến hàng triệu người dân đô thị, do đó cơ chế giám sát từ xa và rào chắn an toàn phần cứng là bắt buộc."
+  },
+  "legal_classification": {
+    "vietnam": {
+      "status": "high-risk",
+      "rationale": "Hệ thống AI điều khiển xe tự hành chở khách thuộc danh mục AI rủi ro cao theo Luật Trí tuệ Nhân tạo 134/2025/QH15 và Quyết định 33/2026/QĐ-TTg, yêu cầu kiểm định an toàn nghiêm ngặt từ Bộ GTVT và giấy phép thử nghiệm có kiểm soát.",
+      "source_ids": [
+        "SRC-04",
+        "SRC-05"
+      ]
+    },
+    "eu": {
+      "status": "high-risk",
+      "rationale": "Các hệ thống AI đóng vai trò thành phần an toàn trong phương tiện tự hành được phân loại là AI rủi ro cao theo Phụ lục III của EU AI Act, đòi hỏi đánh giá sự phù hợp độc lập và ghi nhật ký giám sát từ xa.",
+      "source_ids": [
+        "SRC-06",
+        "SRC-03"
+      ]
+    },
+    "other_markets": "Quy định thử nghiệm xe tự hành tại Trung Quốc (các đô thị thí điểm như Vũ Hán, Bắc Kinh) yêu cầu giấy phép vận hành thương mại không người lái và kết nối giám sát thời gian thực.",
+    "legal_review_required": true
+  },
+  "product_metrics": {
+    "success_kpi": "Số km tự hành không cần can thiệp đạt trên 100.000 km cho mỗi lần can thiệp khẩn cấp trong phạm vi ODD tiêu chuẩn.",
+    "risk_kri": "Tỷ lệ va chạm nghiêm trọng đe dọa an toàn duy trì ở mức dưới 0,05 vụ trên 1.000.000 km vận hành trên toàn bộ đội xe.",
+    "guardrail_metric": "Độ trễ kết nối can thiệp từ xa (Teleoperation) khi xảy ra sự cố luôn dưới 1.000 ms với 0 trường hợp xe tự ý di chuyển khi chưa xác thực an toàn.",
+    "review_cadence": "Đánh giá hàng tuần trong giai đoạn thử nghiệm thương mại và đánh giá ngay lập tức khi phát sinh bất kỳ sự cố va chạm hoặc ngắt kết nối an toàn nào."
+  },
+  "release_decision": {
+    "accountable_product_owner": "Giám đốc Sản phẩm Phương tiện Tự hành",
+    "risk_acceptance_owner": "Giám đốc An toàn Hệ thống",
+    "independent_reviewer": "Hội đồng Đánh giá An toàn và Đạo đức AI Độc lập",
+    "decision": "conditional-go",
+    "release_blockers": [
+      "GAP-01: Hồ sơ đánh giá AI rủi ro cao và giấy phép thử nghiệm thương mại của Bộ GTVT Việt Nam đang chờ phê duyệt",
+      "GAP-02: Chứng nhận đánh giá sự phù hợp bên thứ ba và kiểm thử độ trễ điều khiển từ xa theo EU AI Act đang hoàn tất"
+    ],
+    "release_conditions": [
+      "Đảm bảo 100% không có nhánh code nào triệt tiêu phanh khẩn cấp tự động",
+      "Quy trình xác thực của nhân viên giám sát từ xa trước khi xe di chuyển sau va chạm đã được kiểm định",
+      "Trung tâm điều hành an toàn từ xa hoạt động 24/7 với hạ tầng mạng 5G độ trễ dưới 1 giây"
+    ],
+    "next_review_trigger": "Tái đánh giá khi xảy ra sự cố ngắt quyền tự hành, thay đổi quy định pháp lý hoặc hạn chót ngày 2026-11-30.",
+    "residual_risk_rationale": "Phạm vi vận hành được giới hạn nghiêm ngặt trong khu vực đô thị đã có bản đồ số HD Maps độ nét cao; hệ thống phanh phần cứng dự phòng, cơ chế dừng an toàn tối thiểu (MRM) và đội ngũ giám sát từ xa 24/7 giúp kiểm soát rủi ro tồn dư ở mức chấp nhận được."
+  }
+}
